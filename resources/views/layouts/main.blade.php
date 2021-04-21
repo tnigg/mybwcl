@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -19,5 +19,14 @@
 </head>
 
 <body class="font-sans antialiased">
-    Waddup
-</body
+    <div class="mx-auto max-w-7xl">
+        <div>
+            @include('layouts.main-navi')
+        </div>
+        <div>
+            @yield('content')
+        </div>
+    </div>
+</body>
+
+</html>

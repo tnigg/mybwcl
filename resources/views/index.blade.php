@@ -1,1 +1,5 @@
-Hier layout extenden
+@extends('layouts.main')
+
+@section('content')
+    Hello
+@endsection
