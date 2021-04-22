@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'ign',
         'bw_tag',
-        'team_id'
+        'bw_team_id',
+        'last_online',
     ];
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,9 +19,21 @@ class TeamsController extends Controller
             'name' => $request->name,
             'team_tag' => $request->team_tag,
             'game_id' => $request->game_id,
-            'manager_id' => Auth::id(),
+            'bw_manager_id' => Auth::id(),
         ]);
-
-        
+       
+       // Save  
+       $user = User::where('id', Auth::id())->first();
+       $user->update([
+           'bw_team_id' => $team->id,
+           'bw_role' => 'Manager',
+        ]);        
     }
+
+
+    public function invite() {
+        $users = User::where('bw_team_id', NULL)->get();
+        return view('teams.invite', compact('users'));
+    }
+
 }

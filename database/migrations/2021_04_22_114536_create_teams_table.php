@@ -18,7 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('team_tag');
             
-            $table->unsignedBigInteger('manager_id');
+            $table->unsignedBigInteger('bw_manager_id');
             // $table->foreign('manager_id')->references('id')->on('user');
             $table->string('game_id')->nullable();
             $table->string('division_id')->nullable();

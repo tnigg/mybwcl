@@ -29,6 +29,6 @@ Route::get('/{user}/profile', [ProfilesController::class, 'index'])->name('profi
 
 //Team
 Route::get('/team/create', [TeamsController::class, 'create'])->name('teams.create');
-Route::post('team/store', [TeamsController::class, 'store'])->name('teams.store');
-
+Route::post('/team/store', [TeamsController::class, 'store'])->name('teams.store');
+Route::get('team/invite', [TeamsController::class, 'invite'])->name('teams.invite');
 require __DIR__.'/auth.php';

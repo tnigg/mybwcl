@@ -19,7 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('ign');
             $table->string('bw_tag')->nullable();
             $table->string('email')->unique();
-            // $table->unsignedBigInteger('team_id')->default('');
+            $table->unsignedBigInteger('bw_team_id')->nullable();
+            $table->string('bw_role')->default('Player');
             // $table->foreign('team_id')->references('id')->on('teams')->default('');
             $table->timestamp('last_online');
             $table->timestamp('email_verified_at')->nullable();
