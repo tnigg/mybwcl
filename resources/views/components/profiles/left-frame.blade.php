@@ -4,7 +4,7 @@
 <div>
     <a href="">Inbox</a>
     <a href="">Invites</a>
-    <a href="{{ route('team.create') }}">Create Team</a>
+    <a href="{{ route('teams.create') }}">Create Team</a>
 </div>
 
 <div>

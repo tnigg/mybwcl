@@ -9,7 +9,7 @@ class Team extends Model
 {
     use HasFactory;
 
-    public $fillable = ['manager_id'];
+    public $fillable = ['manager_id', 'name', 'team_tag', 'game_id'];
 
     public function user() {
         $this->belongsTo(User::class);
