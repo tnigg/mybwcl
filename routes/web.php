@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\ProfilesController;
 
 /*
@@ -23,6 +24,10 @@ Route::get('/', function() {
     return view('index');
 });
 
+// Profile
 Route::get('/{user}/profile', [ProfilesController::class, 'index'])->name('profile.index');
+
+//Team
+Route::get('/team/create', [TeamsController::class, 'create'])->name('team.create');
 
 require __DIR__.'/auth.php';

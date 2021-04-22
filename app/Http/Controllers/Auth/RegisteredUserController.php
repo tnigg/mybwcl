@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -50,7 +51,8 @@ class RegisteredUserController extends Controller
             'bw_tag' => $request->bw_tag,
             'last_online' => Carbon::now()
         ]);
-        
+
+                
         event(new Registered($user));
         
         Auth::login($user);       

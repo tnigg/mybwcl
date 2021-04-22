@@ -1,6 +1,6 @@
 <div class="flex w-full text-gray-100 shadow-lg bg-gradient-to-r from-white to-green-600">
     <div class="md:flex-shrink-0">
-        <img class="border opacity-40" src="https://liquipedia.net/commons/images/9/9c/BWCL_logo.png" alt="">
+        <img class="border opacity-40" src="{{asset("img/BWCL_logo.png")}}" alt="">
     </div>
     <div class="flex items-end justify-between w-full">
         <div class="flex items-end w-full px-4 mb-1 space-x-6 text-sm font-bold text-gray-600 uppercase">
