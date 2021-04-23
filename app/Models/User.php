@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Team;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,6 +23,7 @@ class User extends Authenticatable
         'ign',
         'bw_tag',
         'bw_team_id',
+        'bw_role',
         'last_online',
     ];
 
@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function team() {
         return $this->hasOne(Team::class);
     } 
+
+    public function invites() {
+        return $this->hasMany(Invite::class);
+    }
 }

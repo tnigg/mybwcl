@@ -29,11 +29,6 @@ class TeamsController extends Controller
            'bw_role' => 'Manager',
         ]);        
     }
-
-
-    public function invite() {
-        $users = User::where('bw_team_id', NULL)->get();
-        return view('teams.invite', compact('users'));
-    }
+ 
 
 }

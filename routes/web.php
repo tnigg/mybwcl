@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\InviteController;
 use App\Http\Controllers\ProfilesController;
 
 /*
@@ -30,5 +31,10 @@ Route::get('/{user}/profile', [ProfilesController::class, 'index'])->name('profi
 //Team
 Route::get('/team/create', [TeamsController::class, 'create'])->name('teams.create');
 Route::post('/team/store', [TeamsController::class, 'store'])->name('teams.store');
-Route::get('team/invite', [TeamsController::class, 'invite'])->name('teams.invite');
+
+//Invite
+Route::get('/team/invite', [InviteController::class, 'index'])->name('invite.index');
+Route::post('/player/{id}/invite', [InviteController::class, 'store'])->name('invite.store');
+
+
 require __DIR__.'/auth.php';
